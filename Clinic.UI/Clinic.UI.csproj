@@ -10,10 +10,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Clinic.Domain\Clinic.Domain.csproj" />
     <ProjectReference Include="..\Clinic.Repo\Clinic.Repo.csproj" />
+    <ProjectReference Include="..\Clinic.Services\Clinic.Services.csproj" />
   </ItemGroup>
 
 </Project>

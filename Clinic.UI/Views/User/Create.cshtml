@@ -1,0 +1,64 @@
+﻿@model Clinic.Domain.ViewModels.UserViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" asp-controller="User" onsubmit="return jQueryAjaxPost(this);">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="width:100%">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control"  style="width:100%"/>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+          @*  <div class="form-group">  
+                <label  class="control-label"> confirm_password </label>
+                <input type="password" name="confirm_password" class="form-control" id="confirm_password" />
+                <span id='message'></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="RoleId" class="control-label"></label>
+                <select asp-for="RoleId" class ="form-control" asp-items="@(new SelectList(Model.Roles,"Id","Name"))"> </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @*$('#Password, #confirm_password').on('keyup', function () {
+  if ($('#Password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});*@
+}
+</body>
+</html>

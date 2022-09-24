@@ -9,9 +9,9 @@ namespace Clinic.Repo.GenericInterFace
     public interface IGenericInterface<T> where T : class
     {
 
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
 
-        T GetById(long id);
+        Task<T> GetById(long id);
 
         void Add(T t);
 

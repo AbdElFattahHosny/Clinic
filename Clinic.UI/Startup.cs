@@ -1,4 +1,6 @@
 using Clinic.Repo.Data;
+using Clinic.Services.UnitOfWorkInterface;
+using Clinic.Services.UnitOfWorkRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,7 @@ namespace Clinic.UI
                 options.UseSqlServer(Configuration.GetConnectionString("SqlCon"),
                 b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
             });
+            services.AddTransient<IUnitOfWork, UnitOFWorkRepo>();
             services.AddControllersWithViews();
         }
 

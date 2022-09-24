@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Clinic.Domain.Models.VisitType>
+
+@{ ViewData["Title"] = "Index"; }
+
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll", Model)
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

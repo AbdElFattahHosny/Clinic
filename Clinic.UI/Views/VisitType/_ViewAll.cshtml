@@ -1,0 +1,68 @@
+﻿
+@model IEnumerable<Clinic.Domain.Models.VisitType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.TypeName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+             <th>
+                <a onclick="showInPopup('@Url.Action("Create","VisitType",null,Context.Request.Scheme)','New Role')" class="btn btn-success text-white"><i class="fas fa-random"></i> New VisitType</a>
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+      
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                <div>
+                        <a onclick="showInPopup('@Url.Action("Update","VisitType",new {id=item.Id},Context.Request.Scheme)','Update VisitType')" class="btn btn-info text-white"><i class="fas fa-pencil-alt"></i> Edit</a>
+                        <form asp-action="Delete" asp-route-id="@item.Id" onsubmit="return jQueryAjaxDelete(this)" class="d-inline">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </form>
+                    </div>  
+             </td>
+        </tr>
+}
+    </tbody>
+</table>

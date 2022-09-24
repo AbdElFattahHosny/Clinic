@@ -63,48 +63,24 @@
               </a>
           </li>
           <li class="sub-menu dcjq-parent-li">
-            <a href="javascript:;" class="dcjq-parent">
+            <a asp-action="Index" asp-controller="User" class="dcjq-parent">
               <i class="fa fa-desktop"></i>
-              <span>UI Elements</span>
+              <span>Users</span>
               <span class="dcjq-icon"></span></a>
-            <ul class="sub" style="display: none;">
-              <li><a href="general.html">General</a></li>
-              <li><a href="buttons.html">Buttons</a></li>
-              <li><a href="panels.html">Panels</a></li>
-              <li><a href="font_awesome.html">Font Awesome</a></li>
-            </ul>
+            
           </li>
           <li class="sub-menu dcjq-parent-li">
-            <a href="javascript:;" class="dcjq-parent">
+            <a asp-action="Index" asp-controller="Role" class="dcjq-parent">
               <i class="fa fa-cogs"></i>
-              <span>Components</span>
+              <span>Roles</span>
               <span class="dcjq-icon"></span></a>
-            <ul class="sub" style="display: none;">
-              <li><a href="grids.html">Grids</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="todo_list.html">Todo List</a></li>
-              <li><a href="dropzone.html">Dropzone File Upload</a></li>
-              <li><a href="inline_editor.html">Inline Editor</a></li>
-              <li><a href="file_upload.html">Multiple File Upload</a></li>
-            </ul>
+           
           </li>
           <li class="sub-menu dcjq-parent-li">
-            <a href="javascript:;" class="dcjq-parent">
+            <a asp-action="Index" asp-controller="VisitType" class="dcjq-parent">
               <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
-              <span class="dcjq-icon"></span></a>
-            <ul class="sub" style="display: none;">
-              <li><a href="blank.html">Blank Page</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Invoice</a></li>
-              <li><a href="pricing_table.html">Pricing Table</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="404.html">404 Error</a></li>
-              <li><a href="500.html">500 Error</a></li>
-            </ul>
+              <span>Visit Type</span>
+              <span class="dcjq-icon"></span></a> 
           </li>
           <li class="sub-menu dcjq-parent-li">
             <a href="javascript:;" class="dcjq-parent">
@@ -168,11 +144,31 @@
         <!-- sidebar menu end-->
       </div>
     </aside>
-    <div class="container">
+    <div class="container" style="padding-top:50px">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    ...
+
+<div class="modal" tabindex="-1" role="dialog" id="form-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loaderbody" id="loaderbody">
+   <div class="loader"></div>
+</div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
